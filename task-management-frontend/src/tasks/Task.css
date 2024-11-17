@@ -1,0 +1,214 @@
+/* Base Styling for Inputs and Buttons */
+:root {
+  --primary: #D81E5B;
+  --secondary: #8A4EFC;
+  --light: #EEE;
+  --light-alt: #61759b;
+  --dark: #131A26;
+  --dark-alt: #202B3E;
+  --input-border: #8292da;
+  --hover-bg: rgb(53, 56, 83);
+  --hover-color: rgb(61, 62, 65);
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: var(--dark-alt);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* General Container Styling */
+.group {
+  margin: 2% auto;
+  width: 60%;
+  background-color: var(--light-alt);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 960px) {
+  .group {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .group {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+}
+
+/* Styling for Inputs */
+.taskInput {
+  transition-duration: 0.4s;
+  width: 100%;
+  padding: 14px 32px 14px 16px;
+  color: var(--input-border);
+  border: 2px solid var(--input-border);
+  border-radius: 5px;
+  background-color: var(--light);
+}
+
+.taskInput:focus {
+  outline: none !important;
+  border: 2px solid var(--input-border);
+  box-shadow: 0 0 5px var(--input-border);
+}
+
+.taskInput:hover {
+  outline: none !important;
+  border: 2px solid var(--input-border);
+  box-shadow: 0 0 5px var(--input-border);
+}
+
+/* Styling for Buttons */
+.taskButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.4s;
+  padding: 12px 24px;
+  cursor: pointer;
+  border: 2px solid var(--input-border);
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.taskButton:hover {
+  border: 2px solid var(--hover-bg);
+  color: var(--hover-color);
+  box-shadow: 0 0 5px var(--hover-bg);
+}
+
+/* Styling for Select Elements */
+select {
+  display: inline-flex;
+  transition-duration: 0.4s;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  border: 2px solid var(--input-border);
+  background-color: var(--secondary);
+  color: #fff;
+  border-radius: 5px;
+}
+
+select:hover {
+  background-color: var(--input-border);
+  color: #fff;
+  box-shadow: 0 0 5px var(--input-border);
+}
+
+select:focus {
+  outline: none !important;
+  box-shadow: 0 0 5px var(--hover-bg);
+}
+
+/* Task List Items Styling */
+.low, .medium, .high {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.low {
+  background: rgb(57, 165, 30);
+}
+
+.medium {
+  background: rgb(228, 182, 30);
+}
+
+.high {
+  background: rgb(219, 47, 25);
+}
+
+/* Task Item Styling */
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--light-alt);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.taskTitle {
+  flex: 1;
+  padding-right: 15px;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.editButton, .deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  color: #fff;
+}
+
+.editButton svg:hover, .deleteButton:hover {
+  transform: scale(1.2);
+  color: rgb(147, 151, 252);
+}
+
+/* Responsive Form Adjustments */
+.taskContent, .editingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .editingContainer {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.inputGroup input, .inputGroup select {
+  flex: 1 1 45%;  
+}
+
+@media screen and (max-width: 600px) {
+  .inputGroup input, .inputGroup select {
+    flex: 1 1 100%; 
+  }
+}
